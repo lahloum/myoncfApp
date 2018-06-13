@@ -18,6 +18,11 @@ export class MesVoyagesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+
+  openJeScanneMonBillet() {
+    this.navCtrl.push('JeScanneMonBilletPage');
+  }
+ 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MesVoyagesPage');
   }

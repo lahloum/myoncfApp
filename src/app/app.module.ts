@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { TabsControllerPageModule } from '../pages/tabs-controller/tabs-controller.module';
 import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 //import {TabsControllerPageModule} from '../pages/tabs-controller/tabs-controller.module';
 //import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
@@ -25,6 +26,7 @@ import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
     MyApp,TabsControllerPage
   ],
   providers: [
+    BarcodeScanner,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
