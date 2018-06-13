@@ -1,3 +1,36 @@
 page-tabs-controller {
+    .toolbar-background {
+        background-color:#FF6700;
 
+      }
+      .tabs-md .tabbar {
+        background: #FF6700;
+    }
+    .tabs-md .tab-button[aria-selected="true"] {
+        color: #FFFFFF;
+        padding: 0px;
+    }
+    .tabs-md .tab-button[aria-selected=true] {
+        color: #FFFFFF;
+        padding: 0;
+    }
+    .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+        color: #FFFFFF;
+        -webkit-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0);
+    }
+    .toolbar-background {
+        background-color:#FF6700;
+
+      }
+      .bar.bar-balanced .title {
+        color: #fff;
+    }
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+    }
 }

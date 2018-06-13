@@ -14,3 +14,11 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+$stable: #EB6E15;
+$balanced: #FF6400;
+$link-color: $balanced;
+//$ionicons-font-path: "lib/ionic/fonts" !default;
+//@import "lib/ionic/scss";
+body {
+	color: #FFFFFF;
+}
