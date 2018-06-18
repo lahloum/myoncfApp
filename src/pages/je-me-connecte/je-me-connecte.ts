@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { DetailPage } from '../detail/detail';
+import { JeCrEMonComptePage } from '../je-cr-e-mon-compte/je-cr-e-mon-compte';
 
 /**
  * Generated class for the JeMeConnectePage page.
@@ -15,11 +18,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class JeMeConnectePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  email : string;
+  mdp : string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad JeMeConnectePage');
+  }
+
+  connexion() {
+    this.storage.get('infos').then((val) => {
+      if (val!=null){
+        if (val.email === this.email && val.mdp == this.mdp){
+          console.log("email and mdp are the same");
+          this.navCtrl.push(DetailPage); 
+        }else{
+          console.log("email ou mdp erroner");
+        }
+      }
+    })
+  }
+
+  creer() {
+    this.navCtrl.push(JeCrEMonComptePage);
   }
 
 }
