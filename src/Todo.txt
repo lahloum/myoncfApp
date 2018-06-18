@@ -1,0 +1,23 @@
+Affichage des infos détails apres créer compte => Mes voyages
+
+Mes voyages : aucun voyage prévu
+
+
+
+Mettre à jour mes données : Abonnement 
+
+Scanner : Voyage encours départ / arrivée / prix / date / time (accumuler points)
+
+Prochain voyage :::::>
+
+Programme de fidélité (500 pts)
+
+Mes trajets favoris
+
+Départ :: Arrivée :: Heure :: Fréquence
+Casa Voyageurs / Rabat Agdal / 12:35 / 
+
+Affichage infos billet
+
+
+Date naissance profession N° tel

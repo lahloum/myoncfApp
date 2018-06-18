@@ -17,22 +17,21 @@
     <div>
       <img src="img/YN5JxpPATta8PPf9pQm3_oncf_logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
     </div>
-    <form id="jeMeConnecte-form2" class="list">
+    <form id="jeMeConnecte-form2" class="list" (ngSubmit)="connexion()">
       <ion-list id="jeMeConnecte-list2">
         <label class="item item-input" id="jeMeConnecte-input4">
-          <span class="input-label">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="input-label" >Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp;
           </span>
-          <input type="email" placeholder="">
+          <input type="email" placeholder="" [(ngModel)]="email" name="email">
         </label>
         <label class="item item-input" id="jeMeConnecte-input5">
           <span class="input-label">Mot de passe</span>
-          <input type="password" placeholder="">
+          <input type="password" placeholder="" [(ngModel)]="mdp" name="mdp">
         </label>
       </ion-list>
       <div class="spacer" style="height: 40px;"></div>
-      <button ion-button full  style="color:#FFFFFF;" class="button button-balanced button-block" class="button button-light button-block" >Connexion</button>
-  <button ion-button full  style="color:#FFFFFF;" class="button button-energized button-block button-clear">Ou je crée mon compte</button>
+      <button ion-button full  style="color:#FFFFFF;" class="button button-balanced button-block" class="button button-light button-block" type="submit">Connexion</button>
      
     </form>
   </ion-content>
