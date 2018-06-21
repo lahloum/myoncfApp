@@ -12,11 +12,13 @@ import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { IonicStorageModule } from '@ionic/storage';
 
-import { JeScanneMonBilletPage } from '../pages/je-scanne-mon-billet/je-scanne-mon-billet';
+//import { JeScanneMonBilletPage } from '../pages/je-scanne-mon-billet/je-scanne-mon-billet';
 import { DetailPage } from '../pages/detail/detail';
 import { BilletinfosProvider } from '../providers/billetinfos/billetinfos';
-import { MesVoyagesPage } from '../pages/mes-voyages/mes-voyages';
-//import { JeScanneMonBilletPage } from '../pages/je-scanne-mon-billet/je-scanne-mon-billet;
+import { MesVoyagesPageModule } from '../pages/mes-voyages/mes-voyages.module';
+//import { JeScanneMonBilletPage } from '../pages/je-scanne-mon-billet/je-scanne-mon-billet';
+import { JeScanneMonBilletPageModule } from '../pages/je-scanne-mon-billet/je-scanne-mon-billet.module';
+import { JeCrEMonComptePageModule } from '../pages/je-cr-e-mon-compte/je-cr-e-mon-compte.module';
 
 //import {TabsControllerPageModule} from '../pages/tabs-controller/tabs-controller.module';
 //import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
@@ -25,22 +27,27 @@ import { MesVoyagesPage } from '../pages/mes-voyages/mes-voyages';
   declarations: [
     MyApp,
     TabsControllerPage,
-    JeScanneMonBilletPage,
-    DetailPage,
-    MesVoyagesPage
+    //JeCrEMonComptePage,
+    //JeScanneMonBilletPage,
+    DetailPage
+   // MesVoyagesPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    JeScanneMonBilletPageModule,
+    MesVoyagesPageModule,
+    JeCrEMonComptePageModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,TabsControllerPage,
-    JeScanneMonBilletPage,
-    DetailPage,
-    MesVoyagesPage
+    //JeCrEMonComptePage,
+    //JeScanneMonBilletPage,
+    DetailPage
+    //MesVoyagesPage
   ],
   providers: [
     BarcodeScanner,

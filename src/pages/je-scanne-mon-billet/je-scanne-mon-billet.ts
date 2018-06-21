@@ -50,7 +50,7 @@ export class JeScanneMonBilletPage {
           this.navCtrl.push(MesVoyagesPage);
         }
       });
-      //this.navCtrl.push(MesVoyagesPage);
+      this.navCtrl.push(MesVoyagesPage);
     },(err)=>{
       console.log(err);
     });

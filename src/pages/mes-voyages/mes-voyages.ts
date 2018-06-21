@@ -27,11 +27,12 @@ export class MesVoyagesPage {
     console.log('ionViewDidLoad MesVoyagesPage');
     this.storage.get('infos').then((val) => {
       if (val != null){
+        console.log(val);
         var infos = JSON.parse(val);
-        if (infos.billets.length > 1){
+        if (infos.billets.length > 0){
           this.billetsinfo = new Array();
           this.nullmsg = "Liste des voyages";
-          for (let bi of infos.billetinfos) {
+          for (let bi of infos.billets) {
             this.billetsinfo.push(this.billetinfosprovider.getbilletinfos(bi));
           }          
         }else{

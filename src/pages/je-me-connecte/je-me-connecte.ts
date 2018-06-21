@@ -20,12 +20,22 @@ export class JeMeConnectePage {
 
   email : string;
   mdp : string;
+  cnt: boolean = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad JeMeConnectePage');
+    this.storage.get('infos').then((val) =>{
+      if (val!=null){
+        this.cnt = true;
+        //console.log("true");
+      }else{
+        this.cnt = false;
+        //console.log("false");
+      }
+    });
   }
 
   connexion() {

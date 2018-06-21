@@ -16,7 +16,7 @@ import { MesServicesPage } from '../mes-services/mes-services';
     TabsControllerPage
   ],
   entryComponents : [
-    MonComptePage,MesServicesPage,MesVoyagesPage,TabsControllerPage
+    //MonComptePage,MesServicesPage,MesVoyagesPage,TabsControllerPage
   ]
   
 })

@@ -20,6 +20,6 @@
   </div>
   <div id="monCompte-button-bar1" class="button-bar">
   <button ion-button full (click)="openJeMeconnecte()" style="background-color: mintcream; color:#FF6700;font-size:12px;border-radius:100px 100px 100px 100px;" class="button button-light button-block" >Je me connecte</button>
-  <button ion-button full (click)="openJeCreeMonCompte()" style="background-color: mintcream; color:#FF6700;font-size:12px;border-radius:100px 100px 100px 100px;" class="button button-light button-block" >Je crée mon compte</button>
+  <button ion-button full (click)="openJeCreeMonCompte()" style="background-color: mintcream; color:#FF6700;font-size:12px;border-radius:100px 100px 100px 100px;" class="button button-light button-block" [hidden]="cnt">Je crée mon compte</button>
 </div>
 </ion-content>

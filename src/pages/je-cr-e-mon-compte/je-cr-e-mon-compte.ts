@@ -37,7 +37,7 @@ export class JeCrEMonComptePage {
       pts: 0
     }
 
-    infos.billets.push('Billet0');     
+    //infos.billets.push('Billet0');     
     //console.log(infos);
     this.storage.set('infos', JSON.stringify(infos));    
     this.navCtrl.push(JeScanneMonBilletPage); 
