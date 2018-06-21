@@ -12,6 +12,7 @@ import { BilletinfosProvider } from '../../providers/billetinfos/billetinfos';
   templateUrl: 'je-scanne-mon-billet.html',
 })
 export class JeScanneMonBilletPage {
+  //infos: any;
   data ={};
   option : BarcodeScannerOptions;
   constructor(public navCtrl: NavController, public barcodeScanner: BarcodeScanner, public storage: Storage, public billetinfosprovider: BilletinfosProvider) {

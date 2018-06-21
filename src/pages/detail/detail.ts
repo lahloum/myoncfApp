@@ -25,30 +25,41 @@ export class DetailPage {
   mdp : string;
   billets: any[];
 
+  infos: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailPage');
-  }
-
-  saveForm(){
     this.storage.get('infos').then((val) =>{
       if (val!=null){
-        var infos = JSON.parse(val);
-        infos.nom = this.nom;
-        infos.prenom = this.prenom;
-        infos.date_nais = this.date_nais;
-        infos.num_tel = this.num_tel;
-        infos.email = this.email;
-        infos.mdp = this.mdp
-
-        this.storage.set('infos', JSON.stringify(infos));
-        this.navCtrl.push(MesVoyagesPage);
+        this.infos = JSON.parse(val);
+        
+        this.nom = this.infos.nom;
+        this.prenom = this.infos.prenom;
+        this.date_nais = this.infos.date_nais;
+        this.num_tel = this.infos.num_tel;
+        this.email = this.infos.email;
+        this.mdp = this.infos.mdp;
+        
+        console.log(this.infos);
       } else {
         console.log('How did you got here in the first place ??')
       }
     });
+  }
+
+  saveForm(){
+    this.infos.nom = this.nom;
+    this.infos.prenom = this.prenom;
+    this.infos.date_nais = this.date_nais;
+    this.infos.num_tel = this.num_tel;
+    this.infos.email = this.email;
+    this.infos.mdp = this.mdp
+
+    this.storage.set('infos', JSON.stringify(this.infos));
+    this.navCtrl.push(MesVoyagesPage);
   }  
 
 }

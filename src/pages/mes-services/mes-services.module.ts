@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { MesServicesPage } from './mes-services';
-import { MesVoyagesPage } from '../mes-voyages/mes-voyages';
+//import { MesVoyagesPage } from '../mes-voyages/mes-voyages';
 
 @NgModule({
   declarations: [
