@@ -14,5 +14,8 @@
 
 
 <ion-content padding>
-
+  <div *ngIf="infos">
+  <h1>Programme de fidélité</h1>
+  <p>Vous avez </p>&nbsp;<strong>{{infos.pts}}</strong>&nbsp;<p> points de fidélité.</p>
+</div>
 </ion-content>

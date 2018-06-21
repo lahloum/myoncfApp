@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the MesServicesPage page.
@@ -15,11 +16,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MesServicesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  infos: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MesServicesPage');
+    this.storage.get('infos').then((val) => {
+      if (val!=null){
+        this.infos = JSON.parse(val);        
+      }
+    });
   }
 
 }
