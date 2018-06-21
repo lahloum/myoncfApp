@@ -5,6 +5,29 @@
 </ion-header>
  
 <ion-content padding>
+  <h1>Aucun voyage prévu ...</h1>
+
+  <ion-list>
+      <ion-item-sliding *ngFor="let bi of billetsinfo">
+        <ion-item>
+          <ion-card>
+            <ion-card-content>
+                <p>Départ :</p>&nbsp;<strong>{{bi.depart}}</strong>
+                <br>
+                <p>Arrivée :</p>&nbsp;<strong>{{bi.arrivee}}</strong>
+                <br>
+                <p>Prix :</p>&nbsp;<strong>{{bi.prix}}</strong>
+                <br>
+                <p>Date :</p>&nbsp;<strong>{{bi.date}}</strong>
+                <br>
+                <p>Heure :</p>&nbsp;<strong>{{bi.time}}</strong>
+                <br>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+    
   <button ion-button full (click)="openJeScanneMonBillet()">Je scanne mon billet</button>
   
 </ion-content>

@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { BilletinfosProvider } from '../../providers/billetinfos/billetinfos';
 
-/**
- * Generated class for the MesVoyagesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,7 +11,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MesVoyagesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  billetsinfo: any[];
+  nullmsg: string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public billetinfosprovider: BilletinfosProvider) {
   }
 
 
@@ -23,8 +22,24 @@ export class MesVoyagesPage {
     this.navCtrl.push('JeScanneMonBilletPage');
   }
  
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad MesVoyagesPage');
+    this.storage.get('infos').then((val) => {
+      if (val != null){
+        var infos = JSON.parse(val);
+        if (infos.billets.length > 1){
+          this.billetsinfo = new Array();
+          this.nullmsg = "Liste des voyages";
+          for (let bi of infos.billetinfos) {
+            this.billetsinfo.push(this.billetinfosprovider.getbilletinfos(bi));
+          }          
+        }else{
+          this.nullmsg = "Aucun voyage n'est prévu ...";
+        }
+      }
+
+    });
   }
 
 }

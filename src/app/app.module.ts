@@ -11,6 +11,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { JeScanneMonBilletPage } from '../pages/je-scanne-mon-billet/je-scanne-mon-billet';
+import { DetailPage } from '../pages/detail/detail';
+import { BilletinfosProvider } from '../providers/billetinfos/billetinfos';
 //import { JeScanneMonBilletPage } from '../pages/je-scanne-mon-billet/je-scanne-mon-billet;
 
 //import {TabsControllerPageModule} from '../pages/tabs-controller/tabs-controller.module';
@@ -20,7 +22,8 @@ import { JeScanneMonBilletPage } from '../pages/je-scanne-mon-billet/je-scanne-m
   declarations: [
     MyApp,
     TabsControllerPage,
-    JeScanneMonBilletPage
+    JeScanneMonBilletPage,
+    DetailPage
   ],
   imports: [
     BrowserModule,
@@ -30,13 +33,15 @@ import { JeScanneMonBilletPage } from '../pages/je-scanne-mon-billet/je-scanne-m
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,TabsControllerPage,
-    JeScanneMonBilletPage
+    JeScanneMonBilletPage,
+    DetailPage
   ],
   providers: [
     BarcodeScanner,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BilletinfosProvider
   
 ] 
 

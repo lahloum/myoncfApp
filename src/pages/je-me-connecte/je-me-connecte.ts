@@ -32,12 +32,16 @@ export class JeMeConnectePage {
     console.log("In the connexion part");
     this.storage.get('infos').then((val) => {
       if (val!=null){
-        console.log(eval);
-        if (val.email === this.email && val.mdp == this.mdp){
+        console.log(val);
+        var infos = JSON.parse(val);
+        if (infos.email === this.email && infos.mdp == this.mdp){
           console.log("email and mdp are the same");
-          this.navCtrl.push(DetailPage); 
+          this.navCtrl.push(DetailPage);
         }else{
-          console.log("email ou mdp erroner");
+          console.log("email ou mdp erroné");
+          //console.log({}.toString.call(val).split(' ')[1].slice(0, -1).toLowerCase());
+          //console.log("email = "+this.email);
+          //console.log(val.email == "ismail.karchi@gmail.com");
         }
       }
     });

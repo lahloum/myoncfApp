@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BarcodeScanner,BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 import { Storage } from '@ionic/storage';
+import { MesVoyagesPage } from '../mes-voyages/mes-voyages';
+import { BilletinfosProvider } from '../../providers/billetinfos/billetinfos';
 //import { MesVoyagesPage } from '../mes-voyages/mes-voyages';
 
 @IonicPage()
@@ -12,7 +14,7 @@ import { Storage } from '@ionic/storage';
 export class JeScanneMonBilletPage {
   data ={};
   option : BarcodeScannerOptions;
-  constructor(public navCtrl: NavController, public barcodeScanner: BarcodeScanner, public storage: Storage) {
+  constructor(public navCtrl: NavController, public barcodeScanner: BarcodeScanner, public storage: Storage, public billetinfosprovider: BilletinfosProvider) {
   }
   
   scan(){
@@ -29,7 +31,8 @@ export class JeScanneMonBilletPage {
           if (val.billets != null){
             //val.billets.push(barcodeData);
             var infos = JSON.parse(val);
-            infos.billets.push(barcodeData);            
+            infos.billets.push(barcodeData);   
+            infos.pts += this.billetinfosprovider.getbilletpts(barcodeData);
             this.storage.set('infos', JSON.stringify(infos));
           }else{
             //val.billets = new Array();
@@ -38,10 +41,12 @@ export class JeScanneMonBilletPage {
             //JSON.stringify(billets);
             //val.billets.push(barcodeData);
             var infos = JSON.parse(val);
-            infos.billets.push(barcodeData);            
+            infos.billets.push(barcodeData);  
+            infos.pts += this.billetinfosprovider.getbilletpts(barcodeData);          
             this.storage.set('infos', JSON.stringify(infos));            
           }
           console.log(val);
+          this.navCtrl.push(MesVoyagesPage);
         }
       });
       //this.navCtrl.push(MesVoyagesPage);

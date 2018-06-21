@@ -13,9 +13,12 @@ export class JeCrEMonComptePage {
 
   nom : string;
   prenom : string;
+  date_nais : string;
+  num_tel : string;
   email : string;
   mdp : string;
   billets: any[];
+  pts: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
   }
@@ -30,7 +33,8 @@ export class JeCrEMonComptePage {
       prenom: this.prenom,
       email: this.email,
       mdp: this.mdp,
-      billets: new Array()
+      billets: new Array(),
+      pts: 0
     }
 
     infos.billets.push('Billet0');     
