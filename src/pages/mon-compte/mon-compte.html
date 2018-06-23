@@ -18,8 +18,12 @@
 
     <p style="color:#FFFFFF;font-size:12px;">Profitez des avantages de fidélisation</p>
   </div>
+  <div ng-show="cnt" *ngIf="infos">
+    <h1>Bienvenu, </h1><p>{{infos.prenom}}</p>
+    <button ion-button full (click)="openDetailPage()" style="background-color: mintcream; color:#FF6700;font-size:12px;border-radius:100px 100px 100px 100px;" class="button button-light button-block">Actualiser mes données</button>
+  </div>
   <div id="monCompte-button-bar1" class="button-bar">
-  <button ion-button full (click)="openJeMeconnecte()" style="background-color: mintcream; color:#FF6700;font-size:12px;border-radius:100px 100px 100px 100px;" class="button button-light button-block" >Je me connecte</button>
-  <button ion-button full (click)="openJeCreeMonCompte()" style="background-color: mintcream; color:#FF6700;font-size:12px;border-radius:100px 100px 100px 100px;" class="button button-light button-block" [hidden]="cnt">Je crée mon compte</button>
+  <button ion-button full (click)="openJeMeconnecte()" style="background-color: mintcream; color:#FF6700;font-size:12px;border-radius:100px 100px 100px 100px;" class="button button-light button-block" [hidden]="cnt">Je me connecte</button>
+  <button ion-button full (click)="openJeCreeMonCompte()" style="background-color: mintcream; color:#FF6700;font-size:12px;border-radius:100px 100px 100px 100px;" class="button button-light button-block" [hidden]="cnt">Je crée mon compte</button>  
 </div>
 </ion-content>

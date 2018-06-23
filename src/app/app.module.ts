@@ -13,7 +13,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { IonicStorageModule } from '@ionic/storage';
 
 //import { JeScanneMonBilletPage } from '../pages/je-scanne-mon-billet/je-scanne-mon-billet';
-import { DetailPage } from '../pages/detail/detail';
+import { DetailPageModule } from '../pages/detail/detail.module';
 import { BilletinfosProvider } from '../providers/billetinfos/billetinfos';
 import { MesVoyagesPageModule } from '../pages/mes-voyages/mes-voyages.module';
 //import { JeScanneMonBilletPage } from '../pages/je-scanne-mon-billet/je-scanne-mon-billet';
@@ -26,10 +26,10 @@ import { JeCrEMonComptePageModule } from '../pages/je-cr-e-mon-compte/je-cr-e-mo
 @NgModule({
   declarations: [
     MyApp,
-    TabsControllerPage,
+    TabsControllerPage
     //JeCrEMonComptePage,
     //JeScanneMonBilletPage,
-    DetailPage
+    //DetailPage
    // MesVoyagesPage
   ],
   imports: [
@@ -38,15 +38,16 @@ import { JeCrEMonComptePageModule } from '../pages/je-cr-e-mon-compte/je-cr-e-mo
     JeScanneMonBilletPageModule,
     MesVoyagesPageModule,
     JeCrEMonComptePageModule,
+    DetailPageModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,TabsControllerPage,
+    MyApp,TabsControllerPage
     //JeCrEMonComptePage,
     //JeScanneMonBilletPage,
-    DetailPage
+    //DetailPage
     //MesVoyagesPage
   ],
   providers: [

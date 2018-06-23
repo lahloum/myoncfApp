@@ -17,6 +17,7 @@ import { Storage } from '@ionic/storage';
 export class MonComptePage {
 
   cnt: boolean = true;
+  infos: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
   }
@@ -29,13 +30,17 @@ export class MonComptePage {
     this.navCtrl.push('JeCrEMonComptePage');
   }
 
-  ionViewDidLoad() {
+  openDetailPage() {
+    this.navCtrl.push('DetailPage');
+  }
+
+  
+  ionViewWillEnter() {
     console.log('ionViewDidLoad MonComptePage');
     this.storage.get('infos').then((val) =>{
       if (val!=null){
         this.cnt = true;
-        console.log('nned to go to bienvenu');
-        this.navCtrl.push('BienvenuPage');
+        this.infos = JSON.parse(val);                
         //console.log("true");
       }else{
         this.cnt = false;

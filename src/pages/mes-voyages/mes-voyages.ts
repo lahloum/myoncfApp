@@ -23,8 +23,8 @@ export class MesVoyagesPage {
   }
  
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MesVoyagesPage');
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter MesVoyagesPage');
     this.storage.get('infos').then((val) => {
       if (val != null){
         console.log(val);
@@ -32,9 +32,12 @@ export class MesVoyagesPage {
         if (infos.billets.length > 0){
           this.billetsinfo = new Array();
           this.nullmsg = "Liste des voyages";
-          for (let bi of infos.billets) {
-            this.billetsinfo.push(this.billetinfosprovider.getbilletinfos(bi));
-          }          
+          var show_billet = infos.billets[infos.billets.length-1]
+          var billet_info = this.billetinfosprovider.getbilletinfos(show_billet);
+          this.billetsinfo.push(billet_info);
+          //for (let bi of infos.billets) {
+          //  this.billetsinfo.push(this.billetinfosprovider.getbilletinfos(bi));
+          //}          
         }else{
           this.nullmsg = "Aucun voyage n'est prévu ...";
         }

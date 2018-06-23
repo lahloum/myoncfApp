@@ -23,6 +23,11 @@ export class MesServicesPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MesServicesPage');
+    
+  }
+
+  ionViewWillEnter() {
+    console.log('ionViewDidLoad MesServicesPage');
     this.storage.get('infos').then((val) => {
       if (val!=null){
         this.infos = JSON.parse(val);        

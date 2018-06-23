@@ -29,21 +29,40 @@ export class JeScanneMonBilletPage {
       this.storage.get('infos').then((val) => {
         if (val!=null){
           //val.billets.push(barcodeData);
-          if (val.billets != null){
+          var infos = JSON.parse(val);
+          if (infos.billets != null){
             //val.billets.push(barcodeData);
             var infos = JSON.parse(val);
-            infos.billets.push(barcodeData);   
-            infos.pts += this.billetinfosprovider.getbilletpts(barcodeData);
+            // check si le billet différent des autres
+            var exist = false;
+
+            console.log('start looping');
+            for (var _i=0; _i<infos.billets.length-1; _i++){
+              console.log('looping');
+              if (infos.billets[_i].text === barcodeData.text){
+                console.log('meme billet');
+                exist = true;
+                break;
+              }else{
+                console.log('not the same');
+              }
+            }
+            //infos.billets.forEach(element => {
+            //  console.log('looping');
+            //  if (element.text === barcodeData.text){
+            //    exist = true;
+            //  }              
+            //});
+            if (!exist){
+              infos.billets.push(barcodeData);   
+              infos.pts = infos.pts + this.billetinfosprovider.getbilletpts(barcodeData);
+            }                        
             this.storage.set('infos', JSON.stringify(infos));
           }else{
-            //val.billets = new Array();
-            //var billets = JSON.parse(val.billets);
-            //billets.push(barcodeData);
-            //JSON.stringify(billets);
-            //val.billets.push(barcodeData);
+            
             var infos = JSON.parse(val);
             infos.billets.push(barcodeData);  
-            infos.pts += this.billetinfosprovider.getbilletpts(barcodeData);          
+            infos.pts = infos.pts + this.billetinfosprovider.getbilletpts(barcodeData);          
             this.storage.set('infos', JSON.stringify(infos));            
           }
           console.log(val);
@@ -59,7 +78,7 @@ export class JeScanneMonBilletPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad JeScanneMonBilletPage');  
     this.storage.get('infos').then((val) => {
-      console.log(val);
+      //console.log(val);
     }); 
   }
 
