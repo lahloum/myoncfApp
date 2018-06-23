@@ -34,6 +34,8 @@ export class MonComptePage {
     this.storage.get('infos').then((val) =>{
       if (val!=null){
         this.cnt = true;
+        console.log('nned to go to bienvenu');
+        this.navCtrl.push('BienvenuPage');
         //console.log("true");
       }else{
         this.cnt = false;
