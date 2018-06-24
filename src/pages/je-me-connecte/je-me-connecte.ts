@@ -64,7 +64,7 @@ export class JeMeConnectePage {
         let alert = this.alertCtrl.create({
           title: "No infos",
           subTitle: "Aucun utilisateur enregistré",
-          buttons: ["Dismiss"]
+          buttons: ["Dismiss"],          
         });
         alert.present();
       }
