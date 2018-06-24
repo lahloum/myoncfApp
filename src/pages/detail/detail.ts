@@ -21,6 +21,7 @@ export class DetailPage {
   prenom : string;
   date_nais : string;
   num_tel : string;
+  mode_access : string;
   email : string;
   mdp : string;
   billets: any[];
@@ -40,6 +41,7 @@ export class DetailPage {
         this.prenom = this.infos.prenom;
         this.date_nais = this.infos.date_nais;
         this.num_tel = this.infos.num_tel;
+        this.mode_access = this.infos.mode_access;
         this.email = this.infos.email;
         this.mdp = this.infos.mdp;
         
@@ -55,10 +57,11 @@ export class DetailPage {
     this.infos.prenom = this.prenom;
     this.infos.date_nais = this.date_nais;
     this.infos.num_tel = this.num_tel;
+    this.infos.mode_access = this.mode_access;
     this.infos.email = this.email;
     this.infos.mdp = this.mdp
 
-    this.storage.set('infos', JSON.stringify(this.infos));
+    this.storage.set('infos', JSON.stringify(this.infos));    
     this.navCtrl.push(MesVoyagesPage);
   }  
 

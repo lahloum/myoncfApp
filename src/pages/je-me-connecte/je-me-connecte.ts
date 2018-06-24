@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { DetailPage } from '../detail/detail';
 import { JeCrEMonComptePage } from '../je-cr-e-mon-compte/je-cr-e-mon-compte';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the JeMeConnectePage page.
@@ -22,7 +23,7 @@ export class JeMeConnectePage {
   mdp : string;
   cnt: boolean = true;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, private alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -49,10 +50,23 @@ export class JeMeConnectePage {
           this.navCtrl.push(DetailPage);
         }else{
           console.log("email ou mdp erroné");
+          let alert = this.alertCtrl.create({
+            title: 'infos error',
+            subTitle: 'email ou mdp erroné',
+            buttons: ['Dismiss']
+          });
+          alert.present();
           //console.log({}.toString.call(val).split(' ')[1].slice(0, -1).toLowerCase());
           //console.log("email = "+this.email);
           //console.log(val.email == "ismail.karchi@gmail.com");
         }
+      }else{
+        let alert = this.alertCtrl.create({
+          title: "No infos",
+          subTitle: "Aucun utilisateur enregistré",
+          buttons: ["Dismiss"]
+        });
+        alert.present();
       }
     });
   }

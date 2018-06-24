@@ -29,14 +29,32 @@
                     <span class="input-label">Date naissance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;
                     </span>
-                    <input type="email" placeholder="" [(ngModel)]="date_nais" name="date_nais">
+                    <input type="date" placeholder="" [(ngModel)]="date_nais" name="date_nais">
                   </label>
                   <label class="item item-input">
                       <span class="input-label">N° Téléphone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           &nbsp;&nbsp;&nbsp;
                       </span>
-                      <input type="email" placeholder="" [(ngModel)]="num_tel" name="num_tel">
+                      <input type="number" placeholder="" [(ngModel)]="num_tel" name="num_tel">
                     </label>
+                    <!--<label class="item item-input">
+                      <span class="input-label">Mode d'accès à la gare&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;
+                      </span>
+                      <input type="text" placeholder="" [(ngModel)]="mode_access" name="mode_access">
+                    </label>-->
+                    <ion-item>
+                      <ion-label>Mode d'accès à la gare</ion-label>
+                      <ion-select [(ngModel)]="mode_access" name="mode_access">
+                        <ion-option value="à pieds">à pieds</ion-option>
+                        <ion-option value="voiture">voiture</ion-option>
+                        <ion-option value="taxis">taxis</ion-option>
+                        <ion-option value="bus">bus</ion-option>
+                        <ion-option value="vélo">vélo</ion-option>
+                        <ion-option value="autres">autres</ion-option>
+                      </ion-select>
+                    </ion-item>
+                    
           <label class="item item-input">
             <span class="input-label">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;
